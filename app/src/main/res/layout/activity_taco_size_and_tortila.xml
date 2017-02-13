@@ -10,7 +10,8 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"
+        >
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -21,14 +22,109 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_taco_size_and_tortila" />
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/container">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Next"
+            android:text="Next"
+            android:layout_below="@id/sizeAndTortila"
+            android:layout_centerHorizontal="true"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sizeAndTortila"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="false"
+            android:layout_centerHorizontal="true">
+        <RelativeLayout
+            android:layout_width="180dp"
+            android:layout_height="119dp"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/col1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Taco Size"
+                android:id="@+id/txtTacoSize" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtTacoSize"
+                android:id="@+id/rbGroupTacoSize">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Small"
+                    android:checked="true"
+                    android:id="@+id/rbSizeSmall" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Large"
+                    android:id="@+id/rbSizeLarge" />
+            </RadioGroup>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="180dp"
+            android:layout_height="119dp"
+
+
+            android:layout_toRightOf="@id/col1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Tortila"
+                android:id="@+id/txtTortila" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtTortila"
+                android:id="@+id/rbGroupTortila">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Corn"
+                    android:checked="true"
+                    android:id="@+id/rbCorn" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Flour"
+                    android:id="@+id/rbFlour" />
+            </RadioGroup>
+        </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+<!--
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            app:srcCompat="@android:drawable/ic_dialog_email" />
+-->
+
+
+
+       <!-- <include layout="@layout/content_taco_size_and_tortila" />-->
+
 
 </android.support.design.widget.CoordinatorLayout>

@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RadioButton;
+import android.widget.Toast;
 
 public class TacoSizeAndTortila extends AppCompatActivity {
 
@@ -41,5 +43,27 @@ public class TacoSizeAndTortila extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void openFillingActivity(View view) {
+        //setContentView(R.layout.activity_taco_size_and_tortila);
+        TacoPronto tacoPronto = new TacoPronto();
+        RadioButton radioButton = (RadioButton) findViewById(R.id.rbSizeLarge);
+        if(!radioButton.isChecked()) {
+            tacoPronto.setSize("Small");
+        }else {
+            tacoPronto.setSize("Large");
+        }
+        if(2>3)
+            Toast.makeText(this,"True",Toast.LENGTH_SHORT).show();
+        else
+        Toast.makeText(this,"false",Toast.LENGTH_SHORT).show();
+        radioButton = (RadioButton) findViewById(R.id.rbCorn);
+        if(radioButton.isChecked()) {
+            tacoPronto.setTortila("Corn");
+        }else {
+            tacoPronto.setTortila("Flour");
+        }
+        radioButton = (RadioButton) findViewById(R.id.rbCorn);
     }
 }

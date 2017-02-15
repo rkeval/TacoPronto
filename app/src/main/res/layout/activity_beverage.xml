@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_taco_filling"
+    android:id="@+id/activity_beverage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="16dp"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:paddingTop="16dp"
-    tools:context="android.csulb.edu.tacopronto.TacoFilling">
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="android.csulb.edu.tacopronto.Beverage">
 
     <TextView
         android:id="@+id/txtTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Select Fillings:" />
+        android:text="Select Beverages:" />
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/ScrollView01"
@@ -32,70 +31,28 @@
                 android:id="@+id/chkbox1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/beef" />
+                android:text="Soda" />
 
             <CheckBox
                 android:id="@+id/chkbox2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/chkbox1"
-                android:text="@string/chicken" />
+                android:text="Oerveza" />
 
             <CheckBox
                 android:id="@+id/chkbox3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/chkbox2"
-                android:text="@string/white_fish" />
+                android:text="Margarita" />
 
             <CheckBox
                 android:id="@+id/chkbox4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/chkbox3"
-                android:text="@string/cheese" />
-
-            <CheckBox
-                android:id="@+id/chkbox5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/chkbox4"
-                android:text="@string/sea_food" />
-
-            <CheckBox
-                android:id="@+id/chkbox6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/chkbox5"
-                android:text="@string/rice" />
-
-            <CheckBox
-                android:id="@+id/chkbox7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/chkbox6"
-                android:text="@string/beans" />
-
-            <CheckBox
-                android:id="@+id/chkbox8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/chkbox7"
-                android:text="@string/pico_de_gallo" />
-
-            <CheckBox
-                android:id="@+id/chkbox9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/chkbox8"
-                android:text="@string/guacamole" />
-
-            <CheckBox
-                android:id="@+id/chkbox10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/chkbox9"
-                android:text="@string/lbt" />
+                android:text="Tequila" />
         </RelativeLayout>
     </ScrollView>
 
@@ -108,7 +65,7 @@
         android:layout_centerHorizontal="true"
 
         android:background="?attr/colorPrimary"
-        android:onClick="openBeverageActivity"
+        android:onClick="openSummaryActivity"
         android:text="@string/next"
         android:theme="@style/AppTheme.AppBarOverlay" />
 

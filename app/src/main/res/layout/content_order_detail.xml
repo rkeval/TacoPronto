@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp">
+
+    <TextView
+        android:id="@+id/txtTacoDetail"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_toStartOf="@+id/faLess"
+        android:maxLines="4"
+        android:text="fhsdfjdfhsdfhsdfjsdhshskhfsdfsdjfsdhfskdjfsjfjsdkfhsdfhsdfsfhjdjksf" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/faLess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toStartOf="@+id/txtQuantity"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@android:drawable/button_onoff_indicator_on" />
+
+    <EditText
+        android:id="@+id/txtQuantity"
+        android:layout_width="50sp"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/faAdd"
+        android:paddingLeft="1dp"
+        android:paddingRight="1dp"
+        android:text="1"
+        android:textAlignment="center" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/faAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/subTotal"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <TextView
+        android:id="@+id/subTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="$1.99"
+        android:textSize="20sp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/faDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/subTotal"
+        android:layout_below="@+id/subTotal"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@android:drawable/ic_menu_delete" />
+</RelativeLayout>

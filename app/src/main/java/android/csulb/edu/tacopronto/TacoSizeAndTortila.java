@@ -1,5 +1,6 @@
 package android.csulb.edu.tacopronto;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -64,6 +65,8 @@ public class TacoSizeAndTortila extends AppCompatActivity {
         }else {
             tacoPronto.setTortila("Flour");
         }
-        radioButton = (RadioButton) findViewById(R.id.rbCorn);
+        Intent intent = new Intent(this, TacoFilling.class);
+        intent.putExtra("tacoPronto", tacoPronto);
+        startActivity(intent);
     }
 }

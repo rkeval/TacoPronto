@@ -23,48 +23,48 @@
 
 
     <RelativeLayout
-        android:layout_height="match_parent"
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:id="@+id/container">
+        android:layout_height="match_parent">
 
 
 
         <RelativeLayout
+            android:id="@+id/sizeAndTortila"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/sizeAndTortila"
-            android:layout_centerVertical="true"
             android:layout_alignParentStart="false"
-            android:layout_centerHorizontal="true">
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
         <RelativeLayout
+            android:id="@+id/col1"
             android:layout_width="180dp"
             android:layout_height="119dp"
-            android:layout_marginLeft="30dp"
-            android:id="@+id/col1">
+            android:layout_marginLeft="30dp">
             <TextView
+                android:id="@+id/txtTacoSize"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Select Taco Size"
-                android:id="@+id/txtTacoSize" />
+                android:text="@string/select_taco_size" />
 
             <RadioGroup
+                android:id="@+id/rbGroupTacoSize"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txtTacoSize"
-                android:id="@+id/rbGroupTacoSize">
+                android:layout_below="@+id/txtTacoSize">
 
                 <RadioButton
+                    android:id="@+id/rbSizeSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Small"
                     android:checked="true"
-                    android:id="@+id/rbSizeSmall" />
+                    android:text="@string/small" />
 
                 <RadioButton
+                    android:id="@+id/rbSizeLarge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Large"
-                    android:id="@+id/rbSizeLarge" />
+                    android:text="@string/large" />
             </RadioGroup>
         </RelativeLayout>
 
@@ -75,42 +75,42 @@
 
             android:layout_toRightOf="@id/col1">
             <TextView
+                android:id="@+id/txtTortila"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Select Tortila"
-                android:id="@+id/txtTortila" />
+                android:text="@string/select_tortila" />
 
             <RadioGroup
+                android:id="@+id/rbGroupTortila"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txtTortila"
-                android:id="@+id/rbGroupTortila">
+                android:layout_below="@+id/txtTortila">
 
                 <RadioButton
+                    android:id="@+id/rbCorn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Corn"
                     android:checked="true"
-                    android:id="@+id/rbCorn" />
+                    android:text="@string/corn" />
 
                 <RadioButton
+                    android:id="@+id/rbFlour"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Flour"
-                    android:id="@+id/rbFlour" />
+                    android:text="@string/flour" />
             </RadioGroup>
         </RelativeLayout>
         </RelativeLayout>
         <Button
+            android:id="@+id/Next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/Next"
-            android:text="Next"
-            android:theme="@style/AppTheme.AppBarOverlay"
-            android:background="?attr/colorPrimary"
             android:layout_below="@id/sizeAndTortila"
             android:layout_centerHorizontal="true"
-            android:onClick="openFillingActivity"/>
+            android:background="?attr/colorPrimary"
+            android:onClick="openFillingActivity"
+            android:text="@string/next"
+            android:theme="@style/AppTheme.AppBarOverlay" />
     </RelativeLayout>
 
 

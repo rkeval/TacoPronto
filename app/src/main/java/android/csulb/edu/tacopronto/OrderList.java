@@ -10,8 +10,8 @@ import java.util.List;
  */
 
 public class OrderList {
-    private List<TacoOrder> tacos = new ArrayList<>();
     private static OrderList orderList;
+    private List<TacoOrder> tacos = new ArrayList<>();
     private OrderList() {
 
 
@@ -24,32 +24,6 @@ public class OrderList {
         return orderList;
     }
 
-    public void addTacoOrder(String size, String tortila, List<String> fillings, List<String> Beverages, int quantity, double subTotal) {
-        String description = size + " + " + tortila + " + ";
-        description += implode(Beverages, ",");
-        description += " + " + implode(fillings, ",");
-
-        TacoOrder tacoOrder = new TacoOrder();
-        tacoOrder.setDescription(description);
-
-        tacoOrder.setQuantity(quantity);
-        tacoOrder.setSubTotal(subTotal);
-        orderList.tacos.add(tacoOrder);
-    }
-
-    public void addTacoOrder(String size, String tortila, List<String> fillings, List<String> Beverages, int quantity, double subTotal) {
-        String description = size + " + " + tortila + " + ";
-        description += implode(Beverages, ",");
-        description += " + " + implode(fillings, ",");
-
-        TacoOrder tacoOrder = new TacoOrder();
-        tacoOrder.setDescription(description);
-
-        tacoOrder.setQuantity(quantity);
-        tacoOrder.setSubTotal(subTotal);
-        orderList.tacos.add(tacoOrder);
-    }
-
     public static String implode(List ary, String delim) {
         String out = "";
         for (int i = 0; i < ary.size(); i++) {
@@ -59,6 +33,19 @@ public class OrderList {
             out += ary.get(i);
         }
         return out;
+    }
+
+    public void addTacoOrder(String size, String tortila, List<String> fillings, List<String> Beverages, int quantity, double subTotal) {
+        String description = size + " + " + tortila + " + ";
+        description += implode(Beverages, ",");
+        description += " + " + implode(fillings, ",");
+
+        TacoOrder tacoOrder = new TacoOrder();
+        tacoOrder.setDescription(description);
+
+        tacoOrder.setQuantity(quantity);
+        tacoOrder.setSubTotal(subTotal);
+        orderList.tacos.add(tacoOrder);
     }
 
     public TacoOrder get(int position) {

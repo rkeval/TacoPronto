@@ -10,9 +10,16 @@ import java.util.List;
 public class TacoPronto implements Serializable {
     private String size, tortila;
     private List<String> filling;
-
-
     private List<String> beverages;
+    private double subTotal;
+
+    public double getSubTotal() {
+        return subTotal;
+    }
+
+    public void setSubTotal(double subTotal) {
+        this.subTotal = subTotal;
+    }
     public String getTortila() {
         return tortila;
     }

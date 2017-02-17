@@ -20,8 +20,9 @@
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/ScrollView01"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_below="@+id/txtTitle">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTitle"
+        android:paddingBottom="55dp">
 
         <RelativeLayout
             android:id="@+id/cbContainer"
@@ -34,12 +35,33 @@
                 android:layout_height="wrap_content"
                 android:text="@string/beef" />
 
+            <TextView
+                android:id="@+id/txtPrice1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/chkbox1"
+                android:paddingTop="6dp"
+                android:text="@string/Beef_Price"
+                android:textAlignment="viewEnd" />
+
             <CheckBox
                 android:id="@+id/chkbox2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/chkbox1"
                 android:text="@string/chicken" />
+
+            <TextView
+                android:id="@+id/txtPrice2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/txtPrice1"
+                android:layout_toRightOf="@+id/chkbox2"
+                android:paddingTop="15dp"
+                android:text="@string/Chicken_Price"
+                android:textAlignment="viewEnd" />
 
             <CheckBox
                 android:id="@+id/chkbox3"
@@ -48,12 +70,34 @@
                 android:layout_below="@+id/chkbox2"
                 android:text="@string/white_fish" />
 
+            <TextView
+                android:id="@+id/txtPrice3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/txtPrice2"
+                android:layout_toRightOf="@+id/chkbox3"
+                android:paddingTop="15dp"
+                android:text="@string/White_Fish_Price"
+                android:textAlignment="viewEnd" />
+
             <CheckBox
                 android:id="@+id/chkbox4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/chkbox3"
                 android:text="@string/cheese" />
+
+            <TextView
+                android:id="@+id/txtPrice4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/txtPrice3"
+                android:layout_toRightOf="@+id/chkbox4"
+                android:paddingTop="15dp"
+                android:text="@string/Cheese_Price"
+                android:textAlignment="viewEnd" />
 
             <CheckBox
                 android:id="@+id/chkbox5"
@@ -62,12 +106,34 @@
                 android:layout_below="@+id/chkbox4"
                 android:text="@string/sea_food" />
 
+            <TextView
+                android:id="@+id/txtPrice5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/txtPrice4"
+                android:layout_toRightOf="@+id/chkbox5"
+                android:paddingTop="15dp"
+                android:text="@string/Sea_Food_Price"
+                android:textAlignment="viewEnd" />
+
             <CheckBox
                 android:id="@+id/chkbox6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/chkbox5"
                 android:text="@string/rice" />
+
+            <TextView
+                android:id="@+id/txtPrice6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/txtPrice5"
+                android:layout_toRightOf="@+id/chkbox6"
+                android:paddingTop="15dp"
+                android:text="@string/Rice_Price"
+                android:textAlignment="viewEnd" />
 
             <CheckBox
                 android:id="@+id/chkbox7"
@@ -76,12 +142,34 @@
                 android:layout_below="@+id/chkbox6"
                 android:text="@string/beans" />
 
+            <TextView
+                android:id="@+id/txtPrice7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/txtPrice6"
+                android:layout_toRightOf="@+id/chkbox7"
+                android:paddingTop="15dp"
+                android:text="@string/Cheese_Price"
+                android:textAlignment="viewEnd" />
+
             <CheckBox
                 android:id="@+id/chkbox8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/chkbox7"
                 android:text="@string/pico_de_gallo" />
+
+            <TextView
+                android:id="@+id/txtPrice8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/txtPrice7"
+                android:layout_toRightOf="@+id/chkbox8"
+                android:paddingTop="15dp"
+                android:text="@string/Pico_de_Gallo_Price"
+                android:textAlignment="viewEnd" />
 
             <CheckBox
                 android:id="@+id/chkbox9"
@@ -90,15 +178,41 @@
                 android:layout_below="@+id/chkbox8"
                 android:text="@string/guacamole" />
 
+            <TextView
+                android:id="@+id/txtPrice9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/txtPrice8"
+                android:layout_toRightOf="@+id/chkbox9"
+                android:paddingTop="15dp"
+                android:text="@string/Guacamole_Price"
+                android:textAlignment="viewEnd" />
             <CheckBox
                 android:id="@+id/chkbox10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/chkbox9"
                 android:text="@string/lbt" />
+
+            <TextView
+                android:id="@+id/txtPrice10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/txtPrice9"
+                android:layout_toRightOf="@+id/chkbox10"
+                android:paddingTop="15dp"
+                android:text="@string/LBT_Price"
+                android:textAlignment="viewEnd" />
+
         </RelativeLayout>
+
     </ScrollView>
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
     <Button
         android:id="@+id/Next"
         android:layout_width="wrap_content"
@@ -106,11 +220,11 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
-
         android:background="?attr/colorPrimary"
         android:onClick="openBeverageActivity"
         android:text="@string/next"
         android:theme="@style/AppTheme.AppBarOverlay" />
+    </RelativeLayout>
 
 
 </RelativeLayout>

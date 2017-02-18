@@ -57,6 +57,7 @@ public class OrderSummary extends AppCompatActivity {
 
         message += "Total Price:$" + txtPrice.getText();
 
+
         SmsManager sm = SmsManager.getDefault();
         ArrayList<String> parts = sm.divideMessage(message);
         int numParts = parts.size();

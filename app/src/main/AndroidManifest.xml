@@ -39,6 +39,7 @@
         <activity android:name=".TacoFilling" />
         <activity android:name=".Beverage" />
         <activity android:name=".OrderSummary"></activity>
-    </application>
 
+    </application>
+    <uses-permission android:name="android.permission.SEND_SMS" />
 </manifest>

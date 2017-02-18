@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import static android.widget.EditText.*;
@@ -39,9 +40,10 @@ public class CustomAdapter extends ArrayAdapter<TacoOrder> {
         TextView quantity = (TextView) row.findViewById(R.id.txtQuantity);
         quantity.setText(String.valueOf(tacoOrder.getQuantity()));
         TextView subTotal = (TextView) row.findViewById(R.id.subTotal);
-        subTotal.setText(String.valueOf(tacoOrder.getSubTotal()));
+        subTotal.setText(String.valueOf(BigDecimal.valueOf(tacoOrder.getSubTotal()).setScale(4, BigDecimal.ROUND_HALF_UP).doubleValue()));
         TextView unitPrice = (TextView) row.findViewById(R.id.txtUnitPrice);
-        unitPrice.setText(String.valueOf(tacoOrder.getSubTotal()));
+        unitPrice.setText(String.valueOf(BigDecimal.valueOf(tacoOrder.getSubTotal()).setScale(4, BigDecimal.ROUND_HALF_UP).doubleValue()));
+
         return row;
     }
 

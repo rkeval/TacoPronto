@@ -9,13 +9,22 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 public class OrderSummary extends AppCompatActivity {
+   /* @Override
+    protected void onStart() {
+        super.onStart();
+        double total =calculateTotal();
+        TextView textView = (TextView) findViewById(R.id.txtTotalPrice);
+        textView.setText(String.valueOf(total));
+    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +33,13 @@ public class OrderSummary extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.lvOrderList);
         OrderList orderList = OrderList.getOrderList();
         listView.setAdapter(new CustomAdapter(this, R.layout.content_order_detail, orderList));
+
+        TextView total = (TextView) findViewById(R.id.txtTotalPrice);
+        double totalprice = Double.valueOf(total.getText().toString()) +
+                OrderList.getOrderList().getTacos().get(OrderList.getOrderList().getTacos().size() - 1).getSubTotal();
+        totalprice = BigDecimal.valueOf(totalprice).setScale(4, BigDecimal.ROUND_HALF_UP).doubleValue();
+        total.setText(String.valueOf(totalprice));
+
         //orderList.add((TacoPronto) this.getIntent().getSerializableExtra("tacoPronto"));
         //listView.setAdapter(new CustomAdapter());
     }
@@ -62,32 +78,53 @@ public class OrderSummary extends AppCompatActivity {
     }
 
     public void reduceQuantity(View view) {
-        TextView textView = (TextView) findViewById(R.id.txtQuantity);
+        RelativeLayout rl = (RelativeLayout) view.getParent();
+        TextView textView = (TextView) rl.findViewById(R.id.txtQuantity);
         int quantity = Integer.parseInt(textView.getText().toString());
         if (quantity <= 1)
             return;
         quantity -= 1;
-        textView = (TextView) findViewById(R.id.txtUnitPrice);
-        double unitPrice = Double.valueOf(textView.getText().toString());
-        double subTotal = quantity * unitPrice;
-        textView = (TextView) findViewById(R.id.txtQuantity);
+        textView = (TextView) rl.findViewById(R.id.txtUnitPrice);
+        double unitPrice = BigDecimal.valueOf(Double.valueOf(textView.getText().toString())).setScale(4, BigDecimal.ROUND_HALF_UP).doubleValue();
+        double subTotal = BigDecimal.valueOf(quantity * unitPrice).setScale(4, BigDecimal.ROUND_HALF_UP).doubleValue();
+        textView = (TextView) rl.findViewById(R.id.txtQuantity);
         textView.setText(String.valueOf(quantity));
-        textView = (TextView) findViewById(R.id.subTotal);
-        textView.setText(String.valueOf(subTotal));
+        textView = (TextView) rl.findViewById(R.id.subTotal);
+        textView.setText("$" + String.valueOf(subTotal));
+        double total = calculateTotal();
+        textView = (TextView) findViewById(R.id.txtTotalPrice);
+        textView.setText(String.valueOf(total));
     }
 
     public void increaseQuantity(View view) {
-        TextView textView = (TextView) findViewById(R.id.txtQuantity);
+        RelativeLayout rl = (RelativeLayout) view.getParent();
+        TextView textView = (TextView) rl.findViewById(R.id.txtQuantity);
         int quantity = Integer.parseInt(textView.getText().toString());
-        textView = (TextView) findViewById(R.id.txtUnitPrice);
-        double unitPrice = Double.valueOf(textView.getText().toString());
+        textView = (TextView) rl.findViewById(R.id.txtUnitPrice);
+        double unitPrice = BigDecimal.valueOf(Double.valueOf(textView.getText().toString())).setScale(4, BigDecimal.ROUND_HALF_UP).doubleValue();
 
         quantity += 1;
 
-        double subTotal = quantity * unitPrice;
-        textView = (TextView) findViewById(R.id.txtQuantity);
+        double subTotal = BigDecimal.valueOf(quantity * unitPrice).setScale(4, BigDecimal.ROUND_HALF_UP).doubleValue();
+        textView = (TextView) rl.findViewById(R.id.txtQuantity);
         textView.setText(String.valueOf(quantity));
-        textView = (TextView) findViewById(R.id.subTotal);
-        textView.setText(String.valueOf(subTotal));
+        textView = (TextView) rl.findViewById(R.id.subTotal);
+        textView.setText("$" + String.valueOf(subTotal));
+        double total = calculateTotal();
+        textView = (TextView) findViewById(R.id.txtTotalPrice);
+        textView.setText(String.valueOf(total));
+    }
+
+    private double calculateTotal() {
+        double total = 0;
+        ListView lv = (ListView) findViewById(R.id.lvOrderList);
+        int count = lv.getChildCount();
+        for (int index = 0; index < count; index++) {
+            RelativeLayout rl1 = (RelativeLayout) lv.getChildAt(index);
+            TextView tv = (TextView) rl1.findViewById(R.id.subTotal);
+            String st = tv.getText().toString();
+            total += Double.parseDouble(st.substring(1));
+        }
+        return BigDecimal.valueOf(total).setScale(4, BigDecimal.ROUND_HALF_UP).doubleValue();
     }
 }

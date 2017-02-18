@@ -35,8 +35,9 @@ public class Beverage extends AppCompatActivity {
         }
 
         tacoPronto.setBeverages(beverages);
+        tacoPronto.calculateTacoPrice();
         OrderList orderList = OrderList.getOrderList();
-        orderList.addTacoOrder(tacoPronto.getSize(), tacoPronto.getTortila(), tacoPronto.getFilling(), tacoPronto.getBeverages(), 1, 20.5);
+        orderList.addTacoOrder(tacoPronto.getSize(), tacoPronto.getTortila(), tacoPronto.getFilling(), tacoPronto.getBeverages(), 1, tacoPronto.getSubTotal());
         tacoPronto = null;
 
         Intent intent = new Intent(this, OrderSummary.class);

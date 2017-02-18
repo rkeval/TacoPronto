@@ -31,28 +31,71 @@
                 android:id="@+id/chkbox1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Soda" />
+                android:text="@string/soda" />
+
+            <TextView
+                android:id="@+id/SodaPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/chkbox1"
+                android:paddingTop="6dp"
+                android:text="@string/Soda_Price"
+                android:textAlignment="viewEnd" />
 
             <CheckBox
                 android:id="@+id/chkbox2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/chkbox1"
-                android:text="Oerveza" />
+                android:text="@string/oerveza" />
+
+            <TextView
+                android:id="@+id/OervezaPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/SodaPrice"
+                android:layout_toRightOf="@+id/chkbox2"
+                android:paddingTop="15dp"
+                android:text="@string/Oerveza_Price"
+                android:textAlignment="viewEnd" />
 
             <CheckBox
                 android:id="@+id/chkbox3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/chkbox2"
-                android:text="Margarita" />
+                android:text="@string/margarita" />
+
+            <TextView
+                android:id="@+id/MargaritaPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/OervezaPrice"
+                android:layout_toRightOf="@+id/chkbox3"
+                android:paddingTop="15dp"
+                android:text="@string/Margarita_Price"
+                android:textAlignment="viewEnd" />
 
             <CheckBox
                 android:id="@+id/chkbox4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/chkbox3"
-                android:text="Tequila" />
+                android:text="@string/tequila" />
+
+            <TextView
+                android:id="@+id/TequilaPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/MargaritaPrice"
+                android:layout_toRightOf="@+id/chkbox3"
+                android:paddingTop="15dp"
+                android:text="@string/Tequila_Price"
+                android:textAlignment="viewEnd" />
         </RelativeLayout>
     </ScrollView>
 
@@ -63,10 +106,9 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
-
         android:background="?attr/colorPrimary"
         android:onClick="openSummaryActivity"
-        android:text="Add to List"
+        android:text="@string/add_to_list"
         android:theme="@style/AppTheme.AppBarOverlay" />
 
 

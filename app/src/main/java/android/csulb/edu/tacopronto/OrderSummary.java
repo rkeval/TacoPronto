@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -58,5 +59,35 @@ public class OrderSummary extends AppCompatActivity {
         smsManager.sendTextMessage("5624729639", null,
                 message, null, null);*/
         Toast.makeText(this, "Your Order has been placed. Thank you!", Toast.LENGTH_LONG).show();
+    }
+
+    public void reduceQuantity(View view) {
+        TextView textView = (TextView) findViewById(R.id.txtQuantity);
+        int quantity = Integer.parseInt(textView.getText().toString());
+        if (quantity <= 1)
+            return;
+        quantity -= 1;
+        textView = (TextView) findViewById(R.id.txtUnitPrice);
+        double unitPrice = Double.valueOf(textView.getText().toString());
+        double subTotal = quantity * unitPrice;
+        textView = (TextView) findViewById(R.id.txtQuantity);
+        textView.setText(String.valueOf(quantity));
+        textView = (TextView) findViewById(R.id.subTotal);
+        textView.setText(String.valueOf(subTotal));
+    }
+
+    public void increaseQuantity(View view) {
+        TextView textView = (TextView) findViewById(R.id.txtQuantity);
+        int quantity = Integer.parseInt(textView.getText().toString());
+        textView = (TextView) findViewById(R.id.txtUnitPrice);
+        double unitPrice = Double.valueOf(textView.getText().toString());
+
+        quantity += 1;
+
+        double subTotal = quantity * unitPrice;
+        textView = (TextView) findViewById(R.id.txtQuantity);
+        textView.setText(String.valueOf(quantity));
+        textView = (TextView) findViewById(R.id.subTotal);
+        textView.setText(String.valueOf(subTotal));
     }
 }

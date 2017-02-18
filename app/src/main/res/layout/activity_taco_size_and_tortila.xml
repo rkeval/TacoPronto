@@ -60,11 +60,27 @@
                     android:checked="true"
                     android:text="@string/small" />
 
+                <TextView
+                    android:id="@+id/smallPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@+id/rbSizeSmall"
+                    android:paddingTop="6dp"
+                    android:text="@string/Small_Price" />
+
                 <RadioButton
                     android:id="@+id/rbSizeLarge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/large" />
+
+                <TextView
+                    android:id="@+id/largePrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="6dp"
+                    android:text="@string/Large_Price" />
             </RadioGroup>
         </RelativeLayout>
 
@@ -93,11 +109,29 @@
                     android:checked="true"
                     android:text="@string/corn" />
 
+                <TextView
+                    android:id="@+id/cornPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@+id/rbSizeSmall"
+                    android:paddingTop="6dp"
+                    android:text="@string/Corn_Price" />
+
                 <RadioButton
                     android:id="@+id/rbFlour"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/flour" />
+
+                <TextView
+                    android:id="@+id/flourPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@+id/rbSizeSmall"
+                    android:paddingTop="6dp"
+                    android:text="@string/Flour_Price" />
             </RadioGroup>
         </RelativeLayout>
         </RelativeLayout>
@@ -112,22 +146,4 @@
             android:text="@string/next"
             android:theme="@style/AppTheme.AppBarOverlay" />
     </RelativeLayout>
-
-
-<!--
-
-    <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="@dimen/fab_margin"
-            app:srcCompat="@android:drawable/ic_dialog_email" />
--->
-
-
-
-       <!-- <include layout="@layout/content_taco_size_and_tortila" />-->
-
-
 </android.support.design.widget.CoordinatorLayout>

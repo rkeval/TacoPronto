@@ -36,10 +36,12 @@ public class CustomAdapter extends ArrayAdapter<TacoOrder> {
 
         TextView textView = (TextView) row.findViewById(R.id.txtTacoDetail);
         textView.setText(tacoOrder.getDescription());
-        EditText quantity = (EditText) row.findViewById(R.id.txtQuantity);
+        TextView quantity = (TextView) row.findViewById(R.id.txtQuantity);
         quantity.setText(String.valueOf(tacoOrder.getQuantity()));
         TextView subTotal = (TextView) row.findViewById(R.id.subTotal);
         subTotal.setText(String.valueOf(tacoOrder.getSubTotal()));
+        TextView unitPrice = (TextView) row.findViewById(R.id.txtUnitPrice);
+        unitPrice.setText(String.valueOf(tacoOrder.getSubTotal()));
         return row;
     }
 

@@ -23,25 +23,32 @@
         android:layout_marginLeft="10dp"
         android:layout_toStartOf="@+id/txtQuantity"
         android:clickable="true"
+        android:onClick="reduceQuantity"
+        android:paddingTop="10dp"
         app:fabSize="mini"
         app:srcCompat="@android:drawable/button_onoff_indicator_on" />
 
-    <EditText
+    <TextView
         android:id="@+id/txtQuantity"
         android:layout_width="50sp"
         android:layout_height="wrap_content"
         android:layout_toStartOf="@+id/faAdd"
         android:paddingLeft="1dp"
         android:paddingRight="1dp"
+        android:paddingTop="10dp"
         android:text="1"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textSize="20sp" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/faAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/faLess"
         android:layout_toStartOf="@+id/subTotal"
         android:clickable="true"
+        android:onClick="increaseQuantity"
+        android:paddingTop="10dp"
         app:fabSize="mini"
         app:srcCompat="@android:drawable/ic_input_add" />
 
@@ -54,6 +61,27 @@
         android:paddingTop="10dp"
         android:text="$1.99"
         android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txtUnitPriceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/faAdd"
+        android:layout_toStartOf="@+id/txtUnitPrice"
+        android:paddingTop="15dp"
+        android:text="Unit Price: $"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/txtUnitPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/faAdd"
+        android:layout_toStartOf="@+id/faDelete"
+        android:paddingRight="10dp"
+        android:paddingTop="15dp"
+        android:text="10"
+        android:textSize="17sp" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/faDelete"

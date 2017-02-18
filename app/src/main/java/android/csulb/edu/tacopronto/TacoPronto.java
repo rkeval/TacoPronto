@@ -1,5 +1,7 @@
 package android.csulb.edu.tacopronto;
 
+import android.csulb.edu.tacopronto.price.Price;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -50,5 +52,18 @@ public class TacoPronto implements Serializable {
 
     public void setBeverages(List<String> beverages) {
         this.beverages = beverages;
+    }
+
+    public void calculateTacoPrice() {
+        subTotal = 0;
+        subTotal += Price.get(size);
+        subTotal += Price.get(tortila);
+        for (String fill : filling) {
+            subTotal += Price.get(fill);
+        }
+        for (String fill : beverages) {
+            subTotal += Price.get(fill);
+        }
+
     }
 }
